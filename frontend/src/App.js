@@ -1,6 +1,7 @@
 import GlobalStyle from "./styles/global";
 import styled from "styled-components";
 import Form from "./components/Form.js";
+import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -17,6 +18,9 @@ const Container = styled.div`
 const Title = styled.h2``;
 
 function App() {
+  const [users, setUsers]= useState([]);
+  const [onEdit, setOnEdit]= useState(null);
+
   return (
     <>
       <Container>
