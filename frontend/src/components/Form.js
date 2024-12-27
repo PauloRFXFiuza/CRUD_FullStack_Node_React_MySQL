@@ -15,7 +15,9 @@ const FormContainer = styled.form`
 const Form = () => {
 
     return(
-
+        <FormContainer>
+            
+        </FormContainer>
     );
 };
 
