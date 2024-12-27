@@ -31,8 +31,17 @@ export const Th = styled.th`
  }
 `;
 
+export const Td = styled.td`
+ padding-top: 15px; 
+ text-align: ${(props) => (props.alignCenter ? "center" : "start")};
+ width: ${(props) => (props.width ? props.width : "auto")};
+ 
+ @media (max-width: 500px){
+    ${(props) => props.onlyWeb && "display: none"}
+ }
+`;
 
-const Grid = () => {
+const Grid = ({ users }) => {
     return (
         <Table>
             <Thead>
@@ -44,6 +53,13 @@ const Grid = () => {
                    <Th></Th>
                 </Tr>
             </Thead>
+            <Tbody>
+                {users.map((item, i) => (
+                    <Tr key={i}>
+                        <Td width="30%">{item.nome}</Td>
+                    </Tr>
+                ))}
+            </Tbody>
         </Table>
     );
 };
